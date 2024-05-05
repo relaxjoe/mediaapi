@@ -1,9 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mediaapi', {
-  useFindAndModify: false,
-  useNewUrlParser: true,
-  useUnifiedTopology: true
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/mediaapi', {
 });
 
 mongoose.set('debug', true);
