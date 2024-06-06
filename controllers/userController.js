@@ -4,7 +4,7 @@ const { User } = require('../models');
 const userController = {
   // get all users
   getAllUsers(req, res) {
-    User.find({})
+    User.find({}).populate('thoughts').populate('friends')
       .then(dbUserData => res.json(dbUserData))
       .catch(err => {
         console.log(err);
